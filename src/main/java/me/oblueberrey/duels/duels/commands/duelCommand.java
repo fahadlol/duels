@@ -2,10 +2,13 @@ package me.oblueberrey.duels.duels.commands;
 
 import me.oblueberrey.duels.Duels;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.List;
 
 public class duelCommand implements CommandExecutor {
 
@@ -18,7 +21,12 @@ public class duelCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(!(sender instanceof Player)){sender.sendMessage("§cOnly player may run this command"); return true;}
-        if(!(sender.hasPermission("duels.sendDuel"))){sender.sendMessage("§cYou dont have the permission to run this command"); return true;}
+        if(!(sender.hasPermission("duels.sendDuel"))){
+            List<String> messageList = plugin.getMessages().getStringList("permissions.no-perms");
+            for (String line : messageList) {
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
+            }
+            return true;}
 
         Player player = (Player) sender;
 

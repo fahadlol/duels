@@ -1,8 +1,12 @@
 package me.oblueberrey.duels.duels;
 
 import me.oblueberrey.duels.Duels;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class duelManager {
@@ -51,4 +55,17 @@ public class duelManager {
             requestedBy.remove(target);
         }
     }
+    public void setSpawn(Player player){
+
+        Location loc = player.getLocation();
+        plugin.getConfig().set("spawn.location", loc);
+        plugin.saveConfig();
+        player.sendMessage("§aSpawn set");
+    }
+    public boolean arenaExists(String name) {
+        return plugin.getConfigManager()
+                .getConfig("arenas.yml")
+                .contains("arenas." + name);
+    }
+
 }

@@ -2,11 +2,13 @@ package me.oblueberrey.duels.duels.commands;
 
 import me.oblueberrey.duels.Duels;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.List;
 import java.util.UUID;
 
 public class declineDuelCommand implements CommandExecutor {
@@ -30,8 +32,10 @@ public class declineDuelCommand implements CommandExecutor {
 
 
         if (!player.hasPermission("duels.acceptduel")) {
-            player.sendMessage("§cYou don't have the permissions to run this command");
-            return true;
+            List<String> messageList = plugin.getMessages().getStringList("permissions.no-perms");
+            for (String line : messageList) {
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
+            }               return true;
         }
 
 

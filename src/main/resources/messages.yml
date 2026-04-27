@@ -1,0 +1,35 @@
+dueladmin:
+  help-message:
+    - "§a DuelAdmin commands"
+    - "§a /dueladmin arena"
+    - "§a /dueladmin kit"
+    - "§a /dueladmin setspawn"
+  arena-help-message:
+    - "§a DuelAdmin Arena command"
+    - "§a /dueladmin arena create ArenaName"
+    - "§a /dueladmin arena delete ArenaName"
+    - "§a /dueladmin arena enable ArenaName"
+    - "§a /dueladmin arena pos 1|2 ArenaName"
+    - "§a /dueladmin arena wandcopy ArenaName"
+  arena-create-usage:
+    - "§a/dueladmin arena create ArenaName"
+  arena-create-exists:
+    - "§cArena Already exists"
+  kit-help-message:
+    - "§a DuelAdmin kit command"
+    - "§a /dueladmin kit create KitName"
+    - "§a /dueladmin kit delete KitName"
+    - "§a /dueladmin kit load KitName"
+    - "§a /dueladmin kit set KitName"
+
+setspawn:
+  help-message:
+    - "§c usage /setspawn"
+spawn:
+  help-message:
+    - "§c usage /spawn"
+  teleport-message:
+    - "§aTeleported to spawn"
+permissions:
+  no-perms:
+    - "&cNo permissions to run this command"
