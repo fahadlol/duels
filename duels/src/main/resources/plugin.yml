@@ -1,0 +1,5 @@
+name: duels
+version: '${version}'
+
+main: me.oblueberrey.duels.Duels
+api-version: '26.1'
