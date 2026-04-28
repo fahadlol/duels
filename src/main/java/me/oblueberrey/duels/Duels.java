@@ -8,6 +8,7 @@ import me.oblueberrey.duels.duels.commands.declineDuelCommand;
 import me.oblueberrey.duels.duels.commands.duelCommand;
 import me.oblueberrey.duels.duels.commands.spawnCommand;
 import me.oblueberrey.duels.duels.duelManager;
+import me.oblueberrey.duels.duels.util.MessageManager;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,9 +16,19 @@ public final class Duels extends JavaPlugin {
 
     private duelManager duelManager;
     private ConfigManager configManager;
+    private MessageManager messageManager;
+
 
     @Override
     public void onEnable() {
+
+        saveDefaultConfig();
+
+        this.configManager = new ConfigManager(this);
+        loadConfigs();
+
+        this.messageManager = new MessageManager(this);
+        this.duelManager = new duelManager(this);
 
         // commands
         getCommand("duel").setExecutor(new duelCommand(this));
@@ -26,16 +37,6 @@ public final class Duels extends JavaPlugin {
         getCommand("setspawn").setExecutor(new setSpawnCommand(this));
         getCommand("dueladmin").setExecutor(new duelAdminCommand(this));
         getCommand("spawn").setExecutor(new spawnCommand(this));
-
-
-
-
-
-        this.configManager = new ConfigManager(this);
-        this.duelManager = new duelManager(this);
-
-        saveDefaultConfig();
-        loadConfigs();
 
         getLogger().info("Duels enabled.");
     }
@@ -49,6 +50,11 @@ public final class Duels extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("Duels disabled.");
+    }
+
+
+    public MessageManager getMessageManager() {
+        return messageManager;
     }
 
     public duelManager getDuelManager() {

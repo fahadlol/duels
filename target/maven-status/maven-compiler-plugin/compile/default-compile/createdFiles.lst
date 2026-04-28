@@ -1,0 +1,10 @@
+me\oblueberrey\duels\duels\commands\admin\duelAdminCommand.class
+me\oblueberrey\duels\duels\commands\admin\setSpawnCommand.class
+me\oblueberrey\duels\config\ConfigManager.class
+me\oblueberrey\duels\duels\commands\spawnCommand.class
+me\oblueberrey\duels\Duels.class
+me\oblueberrey\duels\duels\duelManager.class
+me\oblueberrey\duels\duels\state\duelState.class
+me\oblueberrey\duels\duels\commands\acceptDuelCommand.class
+me\oblueberrey\duels\duels\commands\duelCommand.class
+me\oblueberrey\duels\duels\commands\declineDuelCommand.class

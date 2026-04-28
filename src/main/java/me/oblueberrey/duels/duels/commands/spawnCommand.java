@@ -20,24 +20,12 @@ public class spawnCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(!(sender instanceof Player)){
-            List<String> messageList = plugin.getMessages().getStringList("permissions.no-perms");
-            for (String line : messageList) {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-            }
-        }
-
-
-        if(plugin.getConfig().get("spawn.location") == null){
-
+            plugin.getMessageManager().send(sender, "permissions.no-perms");
+            return true;
         }
 
         Player  player = (Player) sender;
-        Location loc = plugin.getConfig().getLocation("spawn.location");
-        player.teleport(loc);
-        List<String> messageList = plugin.getMessages().getStringList("teleport-message");
-        for (String line : messageList) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-        }
+        plugin.getDuelManager().sendSpawn(player);
         return true;
     }
 }

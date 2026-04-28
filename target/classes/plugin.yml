@@ -1,0 +1,26 @@
+name: duels
+version: '1.0-SNAPSHOT'
+
+main: me.oblueberrey.duels.Duels
+api-version: '26.1'
+
+commands:
+  duels:
+    description: duel a player
+    usage: /duel player
+  acceptduel:
+    description: accept a duel
+    usage: /acceptduel
+  declineduel:
+    description: decline a duel
+    usage: /declineduel
+  dueladmin:
+    description: duel admin commands
+    usage: /dueladmin subcommands
+  setspawn:
+    description: set server spawn for /spawn
+    usage: /setspawn
+  spawn:
+    description: takes u to spawn
+    usage: /spawn
+

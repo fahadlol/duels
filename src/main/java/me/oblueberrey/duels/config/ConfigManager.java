@@ -51,4 +51,9 @@ public class ConfigManager {
             e.printStackTrace();
         }
     }
+    public void reloadConfigs() {
+        reloadConfig("kits.yml");
+        reloadConfig("arenas.yml");
+        reloadConfig("messages.yml");
+    }
 }

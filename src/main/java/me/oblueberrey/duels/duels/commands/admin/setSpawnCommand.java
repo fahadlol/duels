@@ -21,19 +21,13 @@ public class setSpawnCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(!(sender instanceof Player)){sender.sendMessage("§cOnly players can do this.");return true;}
         if(!(sender.hasPermission("duels.setspawn"))){
-            List<String> messageList = plugin.getMessages().getStringList("permissions.no-perms");
-            for (String line : messageList) {
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-            }
+            plugin.getMessageManager().send(sender, "permissions.no-perms");
             return true;}
 
         Player player = (Player) sender;
 
         if(args.length > 0){
-            List<String> messageList = plugin.getMessages().getStringList("setspawn.help-message");
-            for (String line : messageList) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-            }
+            plugin.getMessageManager().send(player, "setspawn.help-message");
         }
 
 

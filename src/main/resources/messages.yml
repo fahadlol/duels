@@ -4,32 +4,102 @@ dueladmin:
     - "§a /dueladmin arena"
     - "§a /dueladmin kit"
     - "§a /dueladmin setspawn"
-  arena-help-message:
-    - "§a DuelAdmin Arena command"
-    - "§a /dueladmin arena create ArenaName"
-    - "§a /dueladmin arena delete ArenaName"
-    - "§a /dueladmin arena enable ArenaName"
-    - "§a /dueladmin arena pos 1|2 ArenaName"
-    - "§a /dueladmin arena wandcopy ArenaName"
-  arena-create-usage:
-    - "§a/dueladmin arena create ArenaName"
-  arena-create-exists:
-    - "§cArena Already exists"
-  kit-help-message:
-    - "§a DuelAdmin kit command"
-    - "§a /dueladmin kit create KitName"
-    - "§a /dueladmin kit delete KitName"
-    - "§a /dueladmin kit load KitName"
-    - "§a /dueladmin kit set KitName"
+    - "§a /dueladmin reload"
 
-setspawn:
-  help-message:
-    - "§c usage /setspawn"
-spawn:
-  help-message:
-    - "§c usage /spawn"
-  teleport-message:
-    - "§aTeleported to spawn"
+  arena-help-message:
+    - "§a DuelAdmin Arena commands"
+    - "§a /dueladmin arena create <name>"
+    - "§a /dueladmin arena delete <name>"
+    - "§a /dueladmin arena enable <name>"
+    - "§a /dueladmin arena disable <name>"
+    - "§a /dueladmin arena pos 1|2 <name>"
+    - "§a /dueladmin arena setspawn 1|2 <name>"
+    - "§a /dueladmin arena list"
+
+  arena-create-usage:
+    - "§cUsage: /dueladmin arena create <name>"
+
+  arena-create-exists:
+    - "§cArena already exists"
+
+  arena-not-found:
+    - "§cArena does not exist"
+
+  arena-deleted:
+    - "§aArena deleted successfully"
+
+  arena-enabled:
+    - "§aArena enabled"
+
+  arena-disabled:
+    - "§cArena disabled"
+
+  arena-pos-set:
+    - "§aArena position set"
+
+  arena-spawn-set:
+    - "§aArena spawn set"
+
+  arena-invalid-pos:
+    - "§cPosition must be 1 or 2"
+
+  arena-list-header:
+    - "§aArena List:"
+  kit-list-header:
+    - "§aKit List:"
+
+  kit-help-message:
+    - "§a DuelAdmin kit commands"
+    - "§a /dueladmin kit create <name>"
+    - "§a /dueladmin kit delete <name>"
+    - "§a /dueladmin kit set <name>"
+    - "§a /dueladmin kit load <name>"
+    - "§a /dueladmin kit list"
+
+  kit-created:
+    - "§aKit created successfully and inventory copied"
+
+  kit-deleted:
+    - "§aKit deleted successfully"
+
+  kit-loaded:
+    - "§aKit loaded successfully"
+
+  kit-set:
+    - "§aKit updated successfully"
+
+  kit-not-found:
+    - "§cKit does not exist"
+  target-not-found:
+    - "§cPlayer not found"
+  target-offline:
+    - "§cPlayer is not online"
+
+
+  reload-message:
+    - "§aDuels config reloaded"
+  reloading-message:
+    - "§aDuels config is reloading"
+  reload-success:
+    - "§cReload success"
+  reload-failed:
+    "§cReload Failed"
+
+  wandcopy-message:
+    - "§eWand copy tool activated"
+  kit-already-exists:
+    - "§cKit Already exists"
+
+
 permissions:
   no-perms:
-    - "&cNo permissions to run this command"
+    - "§cNo permissions to run this command"
+duels:
+  duel:
+    duel-failed:
+      - "§cDuel failed sending back to spawn"
+util:
+  spawn:
+    spawn-not-found:
+      - "§cSpawn not set please ask a admin to set it!"
+
